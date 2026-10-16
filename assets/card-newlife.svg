@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="580" height="270" viewBox="0 0 580 270" role="img" aria-label="NewLife: IA para NPC en videojuegos">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#160b24"/>
+      <stop offset="1" stop-color="#0b1220"/>
+    </linearGradient>
+    <linearGradient id="bar" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#a78bfa"/>
+      <stop offset="1" stop-color="#f472b6"/>
+    </linearGradient>
+    <style>
+      .t  { font: 800 24px 'Segoe UI', Ubuntu, 'Helvetica Neue', Arial, sans-serif; fill: #f1f5f9; }
+      .s  { font: 500 14px 'Segoe UI', Ubuntu, 'Helvetica Neue', Arial, sans-serif; fill: #94a3b8; }
+      .b  { font: 500 14px 'Segoe UI', Ubuntu, 'Helvetica Neue', Arial, sans-serif; fill: #cbd5e1; }
+      .k  { font: 700 14px 'Segoe UI', Ubuntu, 'Helvetica Neue', Arial, sans-serif; fill: #c4b5fd; }
+      .c  { font: 600 11px 'Cascadia Code', Consolas, Menlo, monospace; fill: #ddd6fe; }
+      .p  { font: 700 11px 'Segoe UI', Ubuntu, Arial, sans-serif; fill: #2e1065; }
+      .think { animation: think 1.8s ease-in-out infinite; }
+      .think.d2 { animation-delay: .3s } .think.d3 { animation-delay: .6s }
+      @keyframes think { 0%,100% { opacity: .25 } 50% { opacity: 1 } }
+    </style>
+  </defs>
+  <rect x="0.5" y="0.5" width="579" height="269" rx="16" fill="url(#bg)" stroke="#4c1d95"/>
+  <rect x="0.5" y="0.5" width="579" height="5" rx="2" fill="url(#bar)"/>
+
+  <!-- icono: mando + puntos de "pensando" -->
+  <g transform="translate(28,30)">
+    <rect width="48" height="48" rx="12" fill="#a78bfa" fill-opacity="0.12" stroke="#a78bfa" stroke-opacity="0.5"/>
+    <path d="M12 22c0-3 2-5 5-5h14c3 0 5 2 5 5l2 9c.5 3-2.5 4.5-4.5 2.5L30 30H18l-3.5 3.5C12.5 35.5 9.5 34 10 31z" fill="none" stroke="#c4b5fd" stroke-width="2" stroke-linejoin="round"/>
+    <path d="M17 22v5M14.5 24.5h5" stroke="#c4b5fd" stroke-width="1.8" stroke-linecap="round"/>
+    <circle cx="30" cy="23" r="1.6" fill="#f9a8d4"/><circle cx="33" cy="26" r="1.6" fill="#f9a8d4"/>
+  </g>
+  <text x="92" y="54" class="t">NewLife</text>
+  <text x="92" y="76" class="s">IA para NPC y criaturas en videojuegos</text>
+
+  <!-- estado -->
+  <rect x="440" y="34" width="112" height="22" rx="11" fill="#c4b5fd"/>
+  <circle cx="456" cy="45" r="2.5" fill="#2e1065" class="think"/>
+  <circle cx="464" cy="45" r="2.5" fill="#2e1065" class="think d2"/>
+  <circle cx="472" cy="45" r="2.5" fill="#2e1065" class="think d3"/>
+  <text x="482" y="49" class="p">En curso</text>
+
+  <text x="28" y="118" class="b"><tspan class="k">Agentes de IA</tspan> que dan vida propia a NPC</text>
+  <text x="28" y="144" class="b"><tspan class="k">Motor desacoplado</tspan> · el juego consulta por contrato</text>
+  <text x="28" y="170" class="b"><tspan class="k">Banco de pruebas</tspan> en Godot para observar y medir</text>
+  <text x="28" y="196" class="b"><tspan class="k">Arquitectura Hexagonal</tspan> también en el cliente</text>
+
+  <g transform="translate(28,218)">
+    <rect width="36" height="24" rx="6" fill="#6d28d9" fill-opacity="0.25" stroke="#5b21b6"/><text x="10" y="16" class="c">C#</text>
+    <rect x="44" width="62" height="24" rx="6" fill="#6d28d9" fill-opacity="0.25" stroke="#5b21b6"/><text x="54" y="16" class="c">.NET 8</text>
+    <rect x="114" width="56" height="24" rx="6" fill="#6d28d9" fill-opacity="0.25" stroke="#5b21b6"/><text x="124" y="16" class="c">Godot</text>
+    <rect x="178" width="94" height="24" rx="6" fill="#6d28d9" fill-opacity="0.25" stroke="#5b21b6"/><text x="188" y="16" class="c">Game AI</text>
+    <rect x="280" width="86" height="24" rx="6" fill="#6d28d9" fill-opacity="0.25" stroke="#5b21b6"/><text x="290" y="16" class="c">Hexagonal</text>
+  </g>
+</svg>

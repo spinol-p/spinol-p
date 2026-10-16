@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="210" viewBox="0 0 1200 210" role="img" aria-label="Trayectoria: Falabella 2019-2021, Stratech 2021-2025, proyectos propios 2025-hoy">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#0b1220"/>
+      <stop offset="1" stop-color="#0d1630"/>
+    </linearGradient>
+    <linearGradient id="line" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#22d3ee"/>
+      <stop offset="0.6" stop-color="#818cf8"/>
+      <stop offset="1" stop-color="#f472b6"/>
+    </linearGradient>
+    <style>
+      .yr { font: 700 13px 'Cascadia Code', Consolas, Menlo, monospace; fill: #94a3b8; }
+      .co { font: 800 17px 'Segoe UI', Ubuntu, 'Helvetica Neue', Arial, sans-serif; fill: #f1f5f9; }
+      .ro { font: 600 13px 'Segoe UI', Ubuntu, 'Helvetica Neue', Arial, sans-serif; }
+      .de { font: 500 12.5px 'Segoe UI', Ubuntu, 'Helvetica Neue', Arial, sans-serif; fill: #94a3b8; }
+      .now { animation: ring 2s ease-out infinite; transform-box: fill-box; transform-origin: center; }
+      @keyframes ring { from { transform: scale(1); opacity: .8 } to { transform: scale(2.6); opacity: 0 } }
+      .draw { stroke-dasharray: 1000; stroke-dashoffset: 1000; animation: draw 2.2s ease-out forwards; }
+      @keyframes draw { to { stroke-dashoffset: 0 } }
+    </style>
+  </defs>
+  <rect width="1200" height="210" rx="16" fill="url(#bg)" stroke="#1e293b"/>
+
+  <line x1="80" y1="70" x2="1120" y2="70" stroke="#1e293b" stroke-width="4" stroke-linecap="round"/>
+  <line x1="80" y1="70" x2="1120" y2="70" stroke="url(#line)" stroke-width="4" stroke-linecap="round" class="draw" pathLength="1000"/>
+
+  <!-- 2019 -->
+  <circle cx="110" cy="70" r="9" fill="#0b1220" stroke="#22d3ee" stroke-width="3"/>
+  <text x="80" y="44" class="yr">2019 – 2020</text>
+  <text x="80" y="112" class="co">Falabella</text>
+  <text x="80" y="134" class="ro" fill="#67e8f9">Líder Técnico</text>
+  <text x="80" y="160" class="de">Click &amp; Collect para Chile, Perú</text>
+  <text x="80" y="178" class="de">y Colombia · Java, Node.js, AKS</text>
+
+  <!-- 2021 -->
+  <circle cx="390" cy="70" r="9" fill="#0b1220" stroke="#38bdf8" stroke-width="3"/>
+  <text x="360" y="44" class="yr">2021</text>
+  <text x="360" y="112" class="co">Falabella</text>
+  <text x="360" y="134" class="ro" fill="#7dd3fc">Arquitecto Corporativo</text>
+  <text x="360" y="160" class="de">Mensajería empresarial regional</text>
+  <text x="360" y="178" class="de">Kafka · Service Bus · Pub/Sub</text>
+
+  <!-- 2021-2025 -->
+  <circle cx="670" cy="70" r="9" fill="#0b1220" stroke="#818cf8" stroke-width="3"/>
+  <text x="640" y="44" class="yr">2021 – 2025</text>
+  <text x="640" y="112" class="co">Stratech Corp.</text>
+  <text x="640" y="134" class="ro" fill="#a5b4fc">Arquitecto de Software</text>
+  <text x="640" y="160" class="de">iGaming y pagos 24/7 · DDD, CQRS</text>
+  <text x="640" y="178" class="de">Outbox · −40% time-to-market</text>
+
+  <!-- hoy -->
+  <circle cx="950" cy="70" r="9" fill="#f472b6" class="now"/>
+  <circle cx="950" cy="70" r="9" fill="#0b1220" stroke="#f472b6" stroke-width="3"/>
+  <circle cx="950" cy="70" r="3.5" fill="#f472b6"/>
+  <text x="920" y="44" class="yr">2025 – hoy</text>
+  <text x="920" y="112" class="co">Proyectos propios</text>
+  <text x="920" y="134" class="ro" fill="#f9a8d4">Arquitectura + IA aplicada</text>
+  <text x="920" y="160" class="de">Bodega-CV · plataforma portuaria</text>
+  <text x="920" y="178" class="de">NewLife · IA para videojuegos</text>
+</svg>

@@ -1,75 +1,116 @@
-<h1 align="center">Sergio Pino Lagos</h1>
-
 <p align="center">
-  <b>Software Architect · Senior Backend Engineer · Distributed Systems & Cloud</b><br/>
-  Santiago, Chile · Español nativo · English (professional)
+  <img src="assets/banner.svg" width="100%" alt="Sergio Pino Lagos · Software Architect · Senior Backend Engineer"/>
 </p>
 
 <p align="center">
-  <a href="https://www.linkedin.com/in/sergio-pino-lagos-07b465a2/"><img src="https://img.shields.io/badge/LinkedIn-sergio--pino--lagos-0A66C2?style=flat&logo=linkedin&logoColor=white" alt="LinkedIn"/></a>
-  <img src="https://img.shields.io/badge/Open%20to-Architecture%20%26%20Backend%20roles-2ea44f?style=flat" alt="Open to work"/>
+  <a href="https://git.io/typing-svg"><img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=20&duration=3200&pause=900&color=22D3EE&center=true&vCenter=true&width=720&lines=Arquitectura+orientada+a+eventos+con+Kafka;DDD+%2B+Hexagonal+%2B+Transactional+Outbox;Zero-Trust%2C+OpenTelemetry+y+plataformas+cloud;Agentes+de+IA+con+Model+Context+Protocol;IA+aplicada+a+NPC+en+videojuegos" alt="Typing SVG"/></a>
 </p>
 
----
+<p align="center">
+  <a href="https://www.linkedin.com/in/sergio-pino-lagos-07b465a2/"><img src="https://img.shields.io/badge/LinkedIn-Conectemos-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn"/></a>
+  <img src="https://img.shields.io/badge/Abierto_a-Arquitectura_%26_Backend-2dd4bf?style=for-the-badge" alt="Abierto a roles de arquitectura y backend"/>
+  <img src="https://img.shields.io/badge/Santiago-Chile-a78bfa?style=for-the-badge" alt="Santiago, Chile"/>
+</p>
 
-### Sobre mí
+<img src="assets/divider.svg" width="100%" alt=""/>
+
+## 👨‍💻 Sobre mí
 
 Ingeniero en Informática con más de **9 años** diseñando plataformas de alto tráfico: iGaming y pagos 24/7, y logística omnicanal para retail regional (Chile, Perú y Colombia).
 
-Trabajo con **microservicios orientados a eventos** sobre **DDD y Arquitectura Hexagonal**, con patrones transaccionales como **Transactional Outbox, CQRS y Sagas**. Me ocupo de que la plataforma sea segura (**Zero-Trust, HashiCorp Vault**), observable de extremo a extremo (**OpenTelemetry**) y operable con ayuda de agentes de IA (**Model Context Protocol, LLMs**).
+Trabajo con **microservicios orientados a eventos** sobre **DDD y Arquitectura Hexagonal**, con patrones como **Transactional Outbox, CQRS y Sagas**. Me ocupo de que la plataforma sea segura (**Zero-Trust, HashiCorp Vault**), observable de extremo a extremo (**OpenTelemetry**) y operable con ayuda de agentes de IA (**Model Context Protocol, LLMs**).
 
-- 🏗️ Hoy construyo una **plataforma de referencia de logística portuaria** con 5 servicios políglotas y un copiloto AIOps.
-- 🎮 En paralelo, investigo **IA aplicada a videojuegos**: agentes que controlan NPC y criaturas en un mundo persistente.
-- 💬 Me interesa hablar de arquitectura de eventos, observabilidad, plataformas internas y agentes LLM en producción.
+```yaml
+sergio:
+  rol: [Software Architect, Senior Backend Engineer, Tech Lead]
+  dominio: [iGaming, pagos, retail omnicanal, logística portuaria]
+  patrones: [EDA, DDD, Hexagonal, CQRS, Outbox, Sagas]
+  ahora: [Bodega-CV, NewLife]
+  idiomas: { español: nativo, inglés: profesional }
+```
 
----
+<img src="assets/divider.svg" width="100%" alt=""/>
 
-### Proyectos actuales
+## 🚀 Proyectos actuales
 
-#### ⚓ Bodega-CV: plataforma de logística portuaria (CFS)
-Implementación de referencia de grado enterprise para un terminal portuario y su bodega extraportuaria (*Container Freight Station*): arribo de naves, patio de contenedores, aforo aduanero y tarificación.
+<p align="center">
+  <img src="assets/card-bodega.svg" width="49%" alt="Bodega-CV: plataforma de logística portuaria con 5 microservicios, Kafka, Vault y copiloto AIOps"/>
+  <img src="assets/card-newlife.svg" width="49%" alt="NewLife: agentes de IA para NPC y criaturas en videojuegos, con Godot y C#"/>
+</p>
 
-- **5 microservicios políglotas** (Java 21 + Spring Boot 3.3, Go, NestJS ×2, Ruby 3.3) bajo DDD y Arquitectura Hexagonal.
-- **Malla de eventos en Apache Kafka (KRaft) con CloudEvents**, cada servicio con su **Transactional Outbox** y productor idempotente, sin 2PC.
-- **BFF en NestJS + consola React 18 con Module Federation** (22 suites, 255 tests).
-- **Seguridad Zero-Trust:** secretos en HashiCorp Vault, contenedores non-root, Kong Gateway DB-less (GitOps) con OpenAPI 3.1.
-- **Observabilidad de negocio:** OpenTelemetry + SigNoz con atributos de dominio, y analítica en ClickHouse con 8 alertas de negocio notificadas por Telegram.
-- **Copiloto AIOps:** servidores MCP en Python + Dify/LLM para diagnosticar el clúster y consultar la operación en lenguaje natural.
+<details>
+<summary><b>⚓ Ver la arquitectura de eventos de Bodega-CV</b></summary>
+<br/>
 
-`Java 21` `Spring Boot` `Go` `NestJS` `Ruby` `React` `Kafka` `PostgreSQL` `ClickHouse` `Vault` `Kong` `OpenTelemetry` `OpenShift` `MCP`
+```mermaid
+flowchart LR
+    subgraph SVC["Servicios de dominio"]
+        CFS["cfs-warehouse<br/>Java 21"]
+        VB["vessel-berth<br/>Go"]
+        YD["yard-dispatch<br/>NestJS"]
+        CT["customs-tariff<br/>Ruby"]
+    end
+    K[("Apache Kafka<br/>CloudEvents")]
+    subgraph USE["Consumo"]
+        BFF["pcs-bff + consola<br/>React MF"]
+        CH[("ClickHouse<br/>8 alertas")]
+        AI["Copiloto AIOps<br/>MCP + LLM"]
+    end
+    CFS -- outbox --> K
+    VB -- outbox --> K
+    YD -- outbox --> K
+    CT -- outbox --> K
+    K --> BFF
+    K --> CH
+    CH -- alertas --> TG["Telegram"]
+    AI -. lectura .-> BFF
+    AI -. trazas .-> OT["SigNoz<br/>OpenTelemetry"]
 
-#### 🎮 NewLife: IA para NPC y criaturas en videojuegos
-Investigación sobre agentes de IA que dan comportamiento propio a personajes no jugadores en un mundo de rol persistente.
+    classDef svc fill:#083344,stroke:#22d3ee,color:#e0f2fe
+    classDef bus fill:#1e1b4b,stroke:#a78bfa,color:#ede9fe
+    classDef use fill:#0f172a,stroke:#2dd4bf,color:#ccfbf1
+    class CFS,VB,YD,CT svc
+    class K bus
+    class BFF,CH,AI,TG,OT use
+```
 
-- **Motor de decisión desacoplado:** el juego solo consulta a la IA a través de un contrato; la lógica de comportamiento vive en un servicio aparte.
-- **Banco de pruebas visual en Godot (C# / .NET 8)** con Arquitectura Hexagonal, para observar y medir el comportamiento de los agentes en tiempo real.
-- Hoja de ruta: cliente de pruebas primero; después, NPC y criaturas controlados por el servicio de IA.
+</details>
 
-`C#` `.NET 8` `Godot` `IA aplicada` `Arquitectura Hexagonal`
+<img src="assets/divider.svg" width="100%" alt=""/>
 
----
+## 🧰 Stack
 
-### Stack
+<p align="center">
+  <img src="https://skillicons.dev/icons?i=java,cs,go,py,ts,cpp,ruby&theme=dark" alt="Lenguajes"/><br/>
+  <img src="https://skillicons.dev/icons?i=spring,dotnet,nestjs,fastapi,react,godot&theme=dark" alt="Frameworks"/><br/>
+  <img src="https://skillicons.dev/icons?i=kafka,postgres,redis,mongodb&theme=dark" alt="Datos y eventos"/><br/>
+  <img src="https://skillicons.dev/icons?i=aws,azure,gcp,kubernetes,docker,terraform,githubactions,grafana,prometheus,linux&theme=dark" alt="Cloud y plataforma"/>
+</p>
 
-- **Lenguajes:** Java · C# · Go · Python · TypeScript · C/C++
-- **Backend:** Spring Boot · .NET · NestJS · FastAPI · gRPC/Protobuf · OpenAPI 3.1
-- **Eventos y datos:** Apache Kafka · Azure Service Bus · GCP Pub/Sub · PostgreSQL · Redis · ClickHouse · MongoDB · BigQuery
-- **Cloud y plataforma:** AWS · Azure · GCP · Kubernetes · OpenShift · Docker · Terraform · Helm · ArgoCD
-- **API Gateways:** Kong · Apigee · MuleSoft · Azure APIM
-- **Seguridad:** HashiCorp Vault · Keycloak · Auth0 · OAuth2/OIDC
-- **Observabilidad:** OpenTelemetry · SigNoz · Grafana Stack · ELK · Datadog
-- **IA:** Model Context Protocol (MCP) · Dify · Ollama · agentes LLM
+<p align="center">
+  <img src="https://img.shields.io/badge/OpenShift-EE0000?style=flat-square&logo=redhatopenshift&logoColor=white" alt="OpenShift"/>
+  <img src="https://img.shields.io/badge/Kong-003459?style=flat-square&logo=kong&logoColor=white" alt="Kong"/>
+  <img src="https://img.shields.io/badge/Vault-FFEC6E?style=flat-square&logo=vault&logoColor=black" alt="HashiCorp Vault"/>
+  <img src="https://img.shields.io/badge/Keycloak-4D4D4D?style=flat-square&logo=keycloak&logoColor=white" alt="Keycloak"/>
+  <img src="https://img.shields.io/badge/ClickHouse-FFCC01?style=flat-square&logo=clickhouse&logoColor=black" alt="ClickHouse"/>
+  <img src="https://img.shields.io/badge/OpenTelemetry-425CC7?style=flat-square&logo=opentelemetry&logoColor=white" alt="OpenTelemetry"/>
+  <img src="https://img.shields.io/badge/Helm-0F1689?style=flat-square&logo=helm&logoColor=white" alt="Helm"/>
+  <img src="https://img.shields.io/badge/Argo_CD-EF7B4D?style=flat-square&logo=argo&logoColor=white" alt="Argo CD"/>
+  <img src="https://img.shields.io/badge/Apigee_%C2%B7_MuleSoft_%C2%B7_APIM-1e293b?style=flat-square" alt="Apigee, MuleSoft, Azure APIM"/>
+  <img src="https://img.shields.io/badge/MCP_%C2%B7_Dify_%C2%B7_Ollama-7c3aed?style=flat-square" alt="MCP, Dify, Ollama"/>
+</p>
 
----
+<img src="assets/divider.svg" width="100%" alt=""/>
 
-### Experiencia
+## 🧭 Trayectoria
 
-| Empresa | Rol | Período |
-|:--|:--|:--|
-| **Stratech Corp.** | Arquitecto de Software / Senior Developer (iGaming y pagos) | 2021 – 2025 |
-| **Falabella Sistemas Corporativos** | Arquitecto Corporativo (mensajería empresarial multicloud) | 2021 |
-| **Falabella Sistemas Corporativos** | Líder Técnico (Click & Collect: Chile, Perú y Colombia) | 2019 – 2020 |
+<p align="center">
+  <img src="assets/timeline.svg" width="100%" alt="Falabella: Líder Técnico 2019-2020 y Arquitecto Corporativo 2021. Stratech Corp.: Arquitecto de Software 2021-2025. Hoy: Bodega-CV y NewLife."/>
+</p>
 
----
+<img src="assets/divider.svg" width="100%" alt=""/>
 
-<p align="center"><i>¿Conversamos? Escríbeme por <a href="https://www.linkedin.com/in/sergio-pino-lagos-07b465a2/">LinkedIn</a>.</i></p>
+<p align="center">
+  <b>¿Conversamos sobre arquitectura, eventos o agentes de IA?</b><br/>
+  <a href="https://www.linkedin.com/in/sergio-pino-lagos-07b465a2/">Escríbeme por LinkedIn</a>
+</p>

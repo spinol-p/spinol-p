@@ -1,0 +1,85 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="320" viewBox="0 0 1200 320" role="img" aria-label="Sergio Pino Lagos, Software Architect">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#070b18"/>
+      <stop offset="0.55" stop-color="#0d1630"/>
+      <stop offset="1" stop-color="#0a2533"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#22d3ee"/>
+      <stop offset="1" stop-color="#a78bfa"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="0.78" cy="0.45" r="0.5">
+      <stop offset="0" stop-color="#22d3ee" stop-opacity="0.18"/>
+      <stop offset="1" stop-color="#22d3ee" stop-opacity="0"/>
+    </radialGradient>
+    <pattern id="grid" width="32" height="32" patternUnits="userSpaceOnUse">
+      <path d="M32 0H0V32" fill="none" stroke="#ffffff" stroke-opacity="0.035"/>
+    </pattern>
+    <style>
+      .name { font: 800 54px 'Segoe UI', Ubuntu, 'Helvetica Neue', Arial, sans-serif; fill: #f8fafc; letter-spacing: 1px; }
+      .role { font: 600 22px 'Segoe UI', Ubuntu, 'Helvetica Neue', Arial, sans-serif; fill: #cbd5e1; }
+      .tags { font: 500 15px 'Cascadia Code', Consolas, 'SFMono-Regular', Menlo, monospace; fill: #67e8f9; letter-spacing: 0.5px; }
+      .loc  { font: 500 14px 'Segoe UI', Ubuntu, 'Helvetica Neue', Arial, sans-serif; fill: #94a3b8; }
+      .lbl  { font: 600 11px 'Cascadia Code', Consolas, Menlo, monospace; fill: #94a3b8; }
+      .edge { stroke: #334155; stroke-width: 1.5; fill: none; }
+      .node { fill: #0f172a; stroke-width: 2; }
+      .pulse { animation: pulse 3s ease-in-out infinite; transform-box: fill-box; transform-origin: center; }
+      @keyframes pulse { 0%,100% { opacity: .35 } 50% { opacity: 1 } }
+      .fade { animation: fade 1.2s ease-out both; }
+      @keyframes fade { from { opacity: 0; transform: translateY(8px) } to { opacity: 1; transform: none } }
+    </style>
+  </defs>
+
+  <rect width="1200" height="320" rx="18" fill="url(#bg)"/>
+  <rect width="1200" height="320" rx="18" fill="url(#grid)"/>
+  <rect width="1200" height="320" rx="18" fill="url(#glow)"/>
+
+  <!-- Texto -->
+  <g class="fade">
+    <text x="64" y="120" class="name">SERGIO PINO LAGOS</text>
+    <rect x="66" y="138" width="180" height="4" rx="2" fill="url(#accent)"/>
+    <text x="64" y="182" class="role">Software Architect · Senior Backend Engineer</text>
+    <text x="64" y="218" class="tags">event-driven · ddd · hexagonal · multicloud · aiops</text>
+    <text x="64" y="262" class="loc">Santiago, Chile  ·  9+ años construyendo sistemas distribuidos</text>
+  </g>
+
+  <!-- Malla de eventos: servicios -> kafka -> consumidores -->
+  <g transform="translate(720,40)">
+    <path id="e1" class="edge" d="M40 40 C120 40 140 120 210 120"/>
+    <path id="e2" class="edge" d="M40 120 L210 120"/>
+    <path id="e3" class="edge" d="M40 200 C120 200 140 120 210 120"/>
+    <path id="e4" class="edge" d="M250 120 C320 120 330 50 400 50"/>
+    <path id="e5" class="edge" d="M250 120 L400 120"/>
+    <path id="e6" class="edge" d="M250 120 C320 120 330 190 400 190"/>
+
+    <!-- productores -->
+    <circle cx="40" cy="40" r="14" class="node" stroke="#22d3ee"/>
+    <circle cx="40" cy="120" r="14" class="node" stroke="#22d3ee"/>
+    <circle cx="40" cy="200" r="14" class="node" stroke="#22d3ee"/>
+    <text x="0" y="72" class="lbl">java</text>
+    <text x="0" y="152" class="lbl">go</text>
+    <text x="0" y="232" class="lbl">nest</text>
+
+    <!-- broker -->
+    <rect x="200" y="92" width="60" height="56" rx="12" class="node" stroke="url(#accent)"/>
+    <rect x="200" y="92" width="60" height="56" rx="12" fill="#22d3ee" fill-opacity="0.12" class="pulse"/>
+    <text x="207" y="125" class="lbl" style="fill:#e2e8f0">kafka</text>
+
+    <!-- consumidores -->
+    <circle cx="400" cy="50" r="14" class="node" stroke="#a78bfa"/>
+    <circle cx="400" cy="120" r="14" class="node" stroke="#a78bfa"/>
+    <circle cx="400" cy="190" r="14" class="node" stroke="#a78bfa"/>
+    <text x="422" y="54" class="lbl">olap</text>
+    <text x="422" y="124" class="lbl">bff</text>
+    <text x="422" y="194" class="lbl">mcp</text>
+
+    <!-- eventos viajando -->
+    <circle r="4" fill="#22d3ee"><animateMotion dur="2.4s" repeatCount="indefinite"><mpath href="#e1"/></animateMotion></circle>
+    <circle r="4" fill="#22d3ee"><animateMotion dur="2.4s" begin="0.8s" repeatCount="indefinite"><mpath href="#e2"/></animateMotion></circle>
+    <circle r="4" fill="#22d3ee"><animateMotion dur="2.4s" begin="1.6s" repeatCount="indefinite"><mpath href="#e3"/></animateMotion></circle>
+    <circle r="4" fill="#a78bfa"><animateMotion dur="2.4s" begin="0.4s" repeatCount="indefinite"><mpath href="#e4"/></animateMotion></circle>
+    <circle r="4" fill="#a78bfa"><animateMotion dur="2.4s" begin="1.2s" repeatCount="indefinite"><mpath href="#e5"/></animateMotion></circle>
+    <circle r="4" fill="#a78bfa"><animateMotion dur="2.4s" begin="2.0s" repeatCount="indefinite"><mpath href="#e6"/></animateMotion></circle>
+  </g>
+</svg>
